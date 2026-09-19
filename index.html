@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uniride - Download the app</title>
+  <meta name="description" content="Welcome to Uniride, where comfort and reliability is our biggest priority. Download the Uniride app for Android.">
+  <meta name="theme-color" content="#F3F4F6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B0D10" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Uniride">
+  <meta property="og:description" content="Where comfort and reliability is our biggest priority. Download the Uniride app.">
+  <meta property="og:image" content="https://ule-msee-flani.github.io/uniride/logo.png">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #F3F4F6;
+      --surface: #FFFFFF;
+      --ink: #14161A;
+      --ink-hover: #23262D;
+      --on-ink: #FFFFFF;
+      --text: #0F172A;
+      --muted: #475569;
+      --border: #E2E8F0;
+      --blue-1: #2F86EB;
+      --blue-2: #1656B0;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0B0D10;
+        --surface: #1A1D22;
+        --ink: #EDEFF3;
+        --ink-hover: #FFFFFF;
+        --on-ink: #0B0D10;
+        --text: #F4F5F7;
+        --muted: #B8BCC4;
+        --border: #2A2E35;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.5;
+      display: flex;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 480px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      overflow: hidden;
+      align-self: flex-start;
+    }
+    @media (min-width: 520px) {
+      body { padding: 48px 16px; }
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 20px;
+    }
+    .brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: block;
+    }
+    .brand span {
+      font-family: "Sora", "Inter", system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    /* Cover: drop cover.jpg next to this file. Until it exists, the brand gradient
+       with the logo shows instead. */
+    .cover {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      background:
+        url("cover.jpg") center / cover no-repeat,
+        linear-gradient(135deg, var(--blue-1), var(--blue-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cover img {
+      width: 38%;
+      max-width: 170px;
+      border-radius: 26%;
+      box-shadow: 0 12px 32px rgba(8, 30, 70, 0.35);
+    }
+    .cover.has-image img { display: none; }
+
+    .hero { padding: 28px 22px 8px; }
+    h1 {
+      font-family: "Sora", "Inter", system-ui, sans-serif;
+      font-weight: 800;
+      font-size: clamp(28px, 8vw, 36px);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .lead {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .btn {
+      margin-top: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 56px;
+      padding: 0 20px;
+      border-radius: 16px;
+      background: var(--ink);
+      color: var(--on-ink);
+      font-weight: 600;
+      font-size: 17px;
+      text-decoration: none;
+      transition: background 0.15s ease;
+    }
+    .btn:hover { background: var(--ink-hover); }
+    .btn:focus-visible { outline: 3px solid var(--blue-1); outline-offset: 3px; }
+    .btn svg { width: 22px; height: 22px; flex: none; }
+
+    .meta {
+      margin-top: 12px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .help {
+      margin: 22px 22px 0;
+      border-top: 1px solid var(--border);
+      padding: 14px 0 6px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .help summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text);
+      padding: 4px 0;
+    }
+    .help ol { margin: 10px 0 4px; padding-left: 20px; }
+    .help li { margin-bottom: 8px; }
+
+    footer {
+      padding: 18px 22px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <header class="brand">
+      <img src="logo.png" alt="" width="40" height="40">
+      <span>Uniride</span>
+    </header>
+
+    <div class="cover" id="cover" role="img" aria-label="Uniride">
+      <img src="logo.png" alt="">
+    </div>
+
+    <section class="hero">
+      <h1>Welcome to Uniride</h1>
+      <p class="lead">Where comfort and reliability is our biggest priority.</p>
+
+      <a class="btn" id="download" href="https://github.com/ule-msee-flani/uniride/releases/latest/download/uniride.apk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/>
+        </svg>
+        Download Uniride app
+      </a>
+      <p class="meta" id="meta">For Android phones</p>
+    </section>
+
+    <details class="help">
+      <summary>Need help installing?</summary>
+      <ol>
+        <li>Tap <strong>Download Uniride app</strong>, then open the file when it finishes.</li>
+        <li>If Android asks, allow your browser to <strong>install unknown apps</strong>, then go back and tap Install.</li>
+        <li>If Google Play Protect shows a warning, tap <strong>More details</strong>, then <strong>Install anyway</strong>.</li>
+        <li>Works on Android 7.0 or newer.</li>
+      </ol>
+    </details>
+
+    <footer>&copy; <span id="year">2026</span> Uniride</footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    var cover = document.getElementById('cover');
+    var probe = new Image();
+    probe.onload = function () { cover.classList.add('has-image'); };
+    probe.src = 'cover.jpg';
+
+    fetch('https://api.github.com/repos/ule-msee-flani/uniride/releases/latest')
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (rel) {
+        var apk = (rel.assets || []).filter(function (a) { return a.name === 'uniride.apk'; })[0];
+        if (!apk) return;
+        var version = String(rel.tag_name || '').replace(/^v/, '').split('-')[0];
+        var mb = Math.round(apk.size / 1048576);
+        document.getElementById('meta').textContent =
+          'Android' + (version ? ' · Version ' + version : '') + ' · ' + mb + ' MB';
+      })
+      .catch(function () {});
+  </script>
+</body>
+</html>

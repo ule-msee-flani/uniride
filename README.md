@@ -1,2 +1,3 @@
-# shuttlego-releases
-ShuttleGo app releases (APK downloads only)
+# Uniride
+
+Download the Uniride app for Android: https://ule-msee-flani.github.io/uniride/
