@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Uniride - Download the app</title>
-  <meta name="description" content="Welcome to Uniride, where comfort and reliability is our biggest priority. Download the Uniride app for Android, or open it on your iPhone.">
+  <title>Download Uniride and MayRoyce</title>
+  <meta name="description" content="Download the Uniride and MayRoyce apps for Android, or open them on your iPhone.">
   <meta name="theme-color" content="#F3F4F6" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0B0D10" media="(prefers-color-scheme: dark)">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Uniride">
-  <meta property="og:description" content="Where comfort and reliability is our biggest priority. Download the Uniride app.">
+  <meta property="og:title" content="Uniride and MayRoyce">
+  <meta property="og:description" content="Download the Uniride and MayRoyce apps.">
   <meta property="og:image" content="https://ule-msee-flani.github.io/uniride/logo.png">
 
   <link rel="icon" type="image/png" href="favicon.png">
@@ -32,6 +32,7 @@
       --border: #E2E8F0;
       --blue-1: #2F86EB;
       --blue-2: #1656B0;
+      --note-bg: #EEF2F7;
     }
     @media (prefers-color-scheme: dark) {
       :root {
@@ -43,6 +44,7 @@
         --text: #F4F5F7;
         --muted: #B8BCC4;
         --border: #2A2E35;
+        --note-bg: #23272E;
       }
     }
 
@@ -59,14 +61,22 @@
       padding: 16px;
     }
 
-    .card {
+    /* The two apps stack: Uniride first, MayRoyce below it. */
+    .stack {
       width: 100%;
       max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-self: flex-start;
+    }
+    .card {
+      width: 100%;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 28px;
       overflow: hidden;
-      align-self: flex-start;
+      padding-bottom: 16px;
     }
     @media (min-width: 520px) {
       body { padding: 48px 16px; }
@@ -112,7 +122,7 @@
     .cover.has-image img { display: none; }
 
     .hero { padding: 28px 22px 8px; }
-    h1 {
+    h1, h2 {
       font-family: "Sora", "Inter", system-ui, sans-serif;
       font-weight: 800;
       font-size: clamp(28px, 8vw, 36px);
@@ -161,6 +171,16 @@
       font-size: 14px;
     }
 
+    /* "Installing MayRoyce replaces Uniride" */
+    .note {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: var(--note-bg);
+      color: var(--text);
+      font-size: 14px;
+    }
+
     .help {
       margin: 22px 22px 0;
       border-top: 1px solid var(--border);
@@ -179,7 +199,7 @@
     .help li { margin-bottom: 8px; }
 
     footer {
-      padding: 18px 22px 24px;
+      padding: 4px 22px 24px;
       text-align: center;
       color: var(--muted);
       font-size: 13px;
@@ -187,55 +207,105 @@
   </style>
 </head>
 <body>
-  <main class="card">
-    <header class="brand">
-      <img src="logo.png" alt="" width="40" height="40">
-      <span>Uniride</span>
-    </header>
+  <main class="stack">
+    <section class="card" id="uniride" aria-labelledby="uniride-title">
+      <header class="brand">
+        <img src="logo.png" alt="" width="40" height="40">
+        <span>Uniride</span>
+      </header>
 
-    <div class="cover" id="cover" role="img" aria-label="Uniride">
-      <img src="logo.png" alt="">
-    </div>
+      <div class="cover" id="cover" role="img" aria-label="Uniride">
+        <img src="logo.png" alt="">
+      </div>
 
-    <section class="hero">
-      <h1>Welcome to Uniride</h1>
-      <p class="lead">Where comfort and reliability is our biggest priority.</p>
+      <div class="hero">
+        <h1 id="uniride-title">Welcome to Uniride</h1>
+        <p class="lead">Where comfort and reliability is our biggest priority.</p>
 
-      <a class="btn" id="download" href="https://github.com/ule-msee-flani/uniride/releases/latest/download/uniride.apk">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/>
-        </svg>
-        Download Uniride app
-      </a>
-      <p class="meta" id="meta">For Android phones</p>
+        <!-- Pinned to Uniride's last release: once MayRoyce releases become "Latest",
+             releases/latest/download/uniride.apk no longer exists. -->
+        <a class="btn" id="download" href="https://github.com/ule-msee-flani/uniride/releases/download/v0.1.3-4/uniride.apk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/>
+          </svg>
+          Download Uniride app
+        </a>
+        <p class="meta" id="meta">Android &middot; Version 0.1.3 &middot; 67 MB</p>
 
-      <a class="btn secondary" id="iphone" href="https://uniride.pages.dev/">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="6.5" y="2.5" width="11" height="19" rx="2.8"/><path d="M11 18.5h2"/>
-        </svg>
-        Uniride for iPhone
-      </a>
-      <p class="meta">Opens the Uniride web app &middot; then Add to Home Screen</p>
+        <a class="btn secondary" id="iphone" href="https://uniride.pages.dev/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="6.5" y="2.5" width="11" height="19" rx="2.8"/><path d="M11 18.5h2"/>
+          </svg>
+          Uniride for iPhone
+        </a>
+        <p class="meta">Opens the Uniride web app &middot; then Add to Home Screen</p>
+      </div>
+
+      <details class="help">
+        <summary>Need help installing?</summary>
+        <p class="help-title">Android</p>
+        <ol>
+          <li>Tap <strong>Download Uniride app</strong>, then open the file when it finishes.</li>
+          <li>If Android asks, allow your browser to <strong>install unknown apps</strong>, then go back and tap Install.</li>
+          <li>If Google Play Protect shows a warning, tap <strong>More details</strong>, then <strong>Install anyway</strong>.</li>
+          <li>Works on Android 7.0 or newer.</li>
+        </ol>
+        <p class="help-title">iPhone</p>
+        <ol>
+          <li>Open <strong>Uniride for iPhone</strong> in <strong>Safari</strong>.</li>
+          <li>Tap the <strong>Share</strong> button, then <strong>Add to Home Screen</strong>.</li>
+          <li>Open Uniride from your home screen, just like any other app.</li>
+        </ol>
+      </details>
     </section>
 
-    <details class="help">
-      <summary>Need help installing?</summary>
-      <p class="help-title">Android</p>
-      <ol>
-        <li>Tap <strong>Download Uniride app</strong>, then open the file when it finishes.</li>
-        <li>If Android asks, allow your browser to <strong>install unknown apps</strong>, then go back and tap Install.</li>
-        <li>If Google Play Protect shows a warning, tap <strong>More details</strong>, then <strong>Install anyway</strong>.</li>
-        <li>Works on Android 7.0 or newer.</li>
-      </ol>
-      <p class="help-title">iPhone</p>
-      <ol>
-        <li>Open <strong>Uniride for iPhone</strong> in <strong>Safari</strong>.</li>
-        <li>Tap the <strong>Share</strong> button, then <strong>Add to Home Screen</strong>.</li>
-        <li>Open Uniride from your home screen, just like any other app.</li>
-      </ol>
-    </details>
+    <section class="card" id="mayroyce" aria-labelledby="mayroyce-title">
+      <header class="brand">
+        <img src="mayroyce-logo.png" alt="" width="40" height="40">
+        <span>MayRoyce</span>
+      </header>
 
-    <footer>&copy; <span id="year">2026</span> Uniride</footer>
+      <div class="hero">
+        <h2 id="mayroyce-title">Welcome to MayRoyce</h2>
+        <p class="lead">Oldies Food Hub and MayRoyce Laundromat in one app. Where quality is our priority.</p>
+
+        <a class="btn" id="mayroyce-download" href="https://github.com/ule-msee-flani/uniride/releases/latest/download/mayroyce.apk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 20h14"/>
+          </svg>
+          Download MayRoyce app
+        </a>
+        <p class="meta" id="mayroyce-meta">For Android phones</p>
+        <p class="note">Have Uniride on this phone? Installing MayRoyce replaces it. It installs as an update, so there is no need to uninstall Uniride first.</p>
+
+        <a class="btn secondary" id="mayroyce-iphone" href="https://mayroyce.pages.dev/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="6.5" y="2.5" width="11" height="19" rx="2.8"/><path d="M11 18.5h2"/>
+          </svg>
+          MayRoyce for iPhone
+        </a>
+        <p class="meta">Opens the MayRoyce web app &middot; then Add to Home Screen</p>
+      </div>
+
+      <details class="help">
+        <summary>Need help installing?</summary>
+        <p class="help-title">Android</p>
+        <ol>
+          <li>Tap <strong>Download MayRoyce app</strong>, then open the file when it finishes.</li>
+          <li>If Android asks, allow your browser to <strong>install unknown apps</strong>, then go back and tap Install (or Update, if Uniride is installed).</li>
+          <li>If Google Play Protect shows a warning, tap <strong>More details</strong>, then <strong>Install anyway</strong>.</li>
+          <li>Works on Android 7.0 or newer.</li>
+        </ol>
+        <p class="help-title">iPhone</p>
+        <ol>
+          <li>Open <strong>MayRoyce for iPhone</strong> in <strong>Safari</strong>.</li>
+          <li>Tap the <strong>Share</strong> button, then <strong>Add to Home Screen</strong>.</li>
+          <li>Open MayRoyce from your home screen, just like any other app.</li>
+        </ol>
+      </details>
+    </section>
+
+    <footer>&copy; <span id="year">2026</span> Uniride &middot; MayRoyce</footer>
   </main>
 
   <script>
@@ -246,14 +316,16 @@
     probe.onload = function () { cover.classList.add('has-image'); };
     probe.src = 'cover.jpg';
 
+    // Uniride is frozen at v0.1.3-4, so its version and size are plain text above.
+    // MayRoyce: show the newest release's version and size.
     fetch('https://api.github.com/repos/ule-msee-flani/uniride/releases/latest')
       .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
       .then(function (rel) {
-        var apk = (rel.assets || []).filter(function (a) { return a.name === 'uniride.apk'; })[0];
+        var apk = (rel.assets || []).filter(function (a) { return a.name === 'mayroyce.apk'; })[0];
         if (!apk) return;
         var version = String(rel.tag_name || '').replace(/^v/, '').split('-')[0];
         var mb = Math.round(apk.size / 1048576);
-        document.getElementById('meta').textContent =
+        document.getElementById('mayroyce-meta').textContent =
           'Android' + (version ? ' · Version ' + version : '') + ' · ' + mb + ' MB';
       })
       .catch(function () {});
